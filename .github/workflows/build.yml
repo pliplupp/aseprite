@@ -110,7 +110,7 @@ jobs:
         $XVFB bash run-tests.sh
 
     - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v3.2.2
+      uses: actions/upload-artifact@latest
       with:
         # Artifact name
         name: Aseprite-${{runner.os}}
