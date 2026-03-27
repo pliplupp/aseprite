@@ -96,7 +96,7 @@ jobs:
       uses: actions/upload-artifact@v7.0.0
       with:
         # Artifact name
-        name: Aseprite
+        name: Aseprite_${{ runner.os }}_${{matrix.ui}}
         path: ${{github.workspace}}/build
 
     - name: Running C++ Tests
