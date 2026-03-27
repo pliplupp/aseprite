@@ -97,7 +97,7 @@ jobs:
       with:
         # Artifact name
         name: Aseprite
-        path: ${{github.workspace}}/aseprite
+        path: ${{github.workspace}}/build
 
     - name: Running C++ Tests
       shell: bash
