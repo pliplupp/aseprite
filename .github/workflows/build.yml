@@ -91,6 +91,14 @@ jobs:
       shell: bash
       run: |
         cd build && ninja
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v7.0.0
+      with:
+        # Artifact name
+        name: Aseprite
+        path: ${{github.workspace}}/aseprite
+
     - name: Running C++ Tests
       shell: bash
       run: |
@@ -98,6 +106,8 @@ jobs:
           export XVFB=xvfb-run
         fi
         cd build && $XVFB ctest --output-on-failure
+
+        
     - name: Running CLI Tests
       if: ${{ matrix.scripting == 'lua' }}
       shell: bash
@@ -109,10 +119,5 @@ jobs:
         cd tests
         $XVFB bash run-tests.sh
 
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v7.0.0
-      with:
-        # Artifact name
-        name: Aseprite-${{runner.os}}
-        path: /build/bin
+    
         
