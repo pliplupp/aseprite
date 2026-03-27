@@ -114,5 +114,5 @@ jobs:
       with:
         # Artifact name
         name: Aseprite-${{runner.os}}
-        path: $PWD/build/bin/aseprite
+        path: /build/bin
         
